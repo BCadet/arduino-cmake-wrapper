@@ -30,5 +30,6 @@ WORKDIR /home/arduino/build
 ENV CMAKE_TOOLCHAIN_FILE=/home/arduino/Arduino-CMake-Toolchain/Arduino-toolchain.cmake
 ENV ARDUINO_INSTALL_PATH=/home/arduino/arduino-${ARDUINO_VERSION}
 ENV ARDUINO_BOARD_OPTIONS_FILE=/home/arduino/cmake_wrapper/BoardOptions.cmake
+ENV TOOLS_PATH=/home/arduino
 
 RUN echo "cmake ../cmake_wrapper" >> /home/arduino/.bashrc

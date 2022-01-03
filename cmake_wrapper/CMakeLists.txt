@@ -11,7 +11,7 @@ set(SRCS
 )
 
 set(INO
-    ${CMAKE_CURRENT_LIST_DIR}/sketch/HelloWorld.ino
+    ${CMAKE_CURRENT_LIST_DIR}/sketch/${CMAKE_PROJECT_NAME}.ino
 )
 # handle ino files
 set_source_files_properties(${INO} PROPERTIES LANGUAGE "CXX") #this force cmake to call g++ with ino files
