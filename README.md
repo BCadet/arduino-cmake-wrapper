@@ -10,8 +10,12 @@ This repo contain the environment to build an arduino sketch with CMake.
 
 ### With Docker
 
-- run `dockerSetup.sh` to build a docker image with the arduino-ide inside
-- run `dockerBuild.sh` to run into a container to build your project.
+- run `docker-compose build`
+- run `docker-compose run arduino-cmake-wrapper`
+
+In the .env file, you can set the user id and group id of the user in the container to match yours and the arduino version used (default to 1.8.16).
+
+In the docker-compose.yml file, you can set the default command to be run at the entry in the docker.
 
 ### Directly on your host
 
@@ -22,8 +26,7 @@ This repo contain the environment to build an arduino sketch with CMake.
 ## Commands available in the build environment
 
 - **make**: build the sketch
-- **make upload SERIAL_PORT_FILE=/dev/ttyACM0** : upload the sketch to an arduino (you need to provide the correct serial port in the variable SERIAL_PORT_FILE and share the serial port with the container by adding the arg `--device=/dev/ttyACM0` to the docker run command)
-- **make install**: export the elf and bin files to the folder `cmake_wrapper/binaries` (usefull in the Docker env as the build folder is not retained)
+- **make upload SERIAL_PORT_FILE=/dev/ttyACM0** : upload the sketch to an arduino (you need to provide the correct serial port in the variable SERIAL_PORT_FILE and share the serial port with the container by adding the arg `--device=/dev/ttyACM0` to the docker run command) **THIS DOES NOT WORK FOR SAMD BOARD, I DON'T KNOW FOR THE OTHERS** 
 
 ## Dependencies
 
