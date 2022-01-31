@@ -28,7 +28,7 @@ if [ "$PWD" = / ]; then
 fi
 
 if [ -n "$@" ]; then
-	exec $GOSU bash -c "$@"
-else
 	exec $GOSU bash
+else
+	exec $GOSU bash -c "$@"
 fi

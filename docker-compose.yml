@@ -9,7 +9,7 @@ services:
       - USER_ID=${USER_ID}
       - GROUP_ID=${GROUP_ID}
     volumes:
-      - ${PWD}/cmake_wrapper:ro
+      - ${PWD}/cmake_wrapper:/cmake_wrapper:ro
       - ${PWD}/build:/build
     working_dir: /build
-    command: ["cmake /cmake_wrapper && make"]
+    # command: ["cmake /cmake_wrapper && make"]
