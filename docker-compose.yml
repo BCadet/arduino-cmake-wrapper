@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  arduino-cmake-wrapper:
+    image: arduino-cmake-wrapper
+    build:
+      context: .
+    environment:
+      - USER_ID=${USER_ID}
+      - GROUP_ID=${GROUP_ID}
+    volumes:
+      - ${PWD}/cmake_wrapper:ro
+      - ${PWD}/build:/build
+    working_dir: /build
+    command: ["cmake /cmake_wrapper && make"]
